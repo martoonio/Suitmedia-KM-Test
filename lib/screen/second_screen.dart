@@ -53,18 +53,7 @@ class SecondScreen extends StatelessWidget {
                 },
               ),
             ),
-            ElevatedButton(
-              style: elevatedButtonStyle,
-              onPressed: () => _goToThirdScreen(context),
-              child: Text(
-                'Choose a User',
-                style: TextStyle(
-                  color: whiteColor,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
+            button(context, "Choose a User", () => _goToThirdScreen(context)),
           ],
         ),
       ),

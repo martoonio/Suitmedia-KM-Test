@@ -89,63 +89,17 @@ class _FirstScreenState extends State<FirstScreen> {
                   const SizedBox(height: 51),
                   SizedBox(
                     height: 39.88,
-                    child: TextField(
-                      controller: _nameController,
-                      decoration: InputDecoration(
-                        hintText: 'Name',
-                        hintStyle:
-                            TextStyle(color: hintTextColor, fontSize: 16),
-                        fillColor: whiteColor,
-                        filled: true,
-                        focusedBorder: textFieldOutlineInputBorder,
-                        contentPadding: textFieldPadding,
-                        border: textFieldOutlineInputBorder,
-                      ),
-                    ),
+                    child: textField(_nameController, "Name", false)
                   ),
                   const SizedBox(height: 15),
                   SizedBox(
                     height: 39.88,
-                    child: TextField(
-                      controller: _palindromeController,
-                      decoration: InputDecoration(
-                        hintText: 'Palindrome',
-                        hintStyle:
-                            TextStyle(color: hintTextColor, fontSize: 16),
-                        fillColor: whiteColor,
-                        filled: true,
-                        focusedBorder: textFieldOutlineInputBorder,
-                        contentPadding: textFieldPadding,
-                        border: textFieldOutlineInputBorder,
-                      ),
-                    ),
+                    child: textField(_palindromeController, "Palindrome", false),
                   ),
                   const SizedBox(height: 45),
-                  ElevatedButton(
-                    onPressed: _checkPalindrome,
-                    style: elevatedButtonStyle,
-                    child: Text(
-                      'CHECK',
-                      style: TextStyle(
-                        color: whiteColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
+                  button(context, "CHECK", _checkPalindrome),
                   const SizedBox(height: 15),
-                  ElevatedButton(
-                    onPressed: _goToNextScreen,
-                    style: elevatedButtonStyle,
-                    child: Text(
-                      'NEXT',
-                      style: TextStyle(
-                        color: whiteColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
+                  button(context, "NEXT", _goToNextScreen)
                 ],
               ),
             ),

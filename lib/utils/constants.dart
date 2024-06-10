@@ -21,6 +21,22 @@ OutlineInputBorder textFieldOutlineInputBorder = OutlineInputBorder(
   ),
 );
 
+TextField textField(
+        TextEditingController controller, String hintText, bool obscureText) =>
+    TextField(
+      controller: controller,
+      obscureText: obscureText,
+      decoration: InputDecoration(
+        hintText: hintText,
+        hintStyle: TextStyle(color: hintTextColor, fontSize: 16),
+        fillColor: whiteColor,
+        filled: true,
+        focusedBorder: textFieldOutlineInputBorder,
+        contentPadding: textFieldPadding,
+        border: textFieldOutlineInputBorder,
+      ),
+    );
+
 // Button Style
 BorderRadiusGeometry buttonBorderRadius = BorderRadius.circular(12);
 ButtonStyle elevatedButtonStyle = ElevatedButton.styleFrom(
@@ -30,6 +46,21 @@ ButtonStyle elevatedButtonStyle = ElevatedButton.styleFrom(
   ),
   minimumSize: const Size(double.infinity, 41),
 );
+
+ElevatedButton button(
+        BuildContext context, String text, Function() onPressed) =>
+    ElevatedButton(
+      onPressed: onPressed,
+      style: elevatedButtonStyle,
+      child: Text(
+        text,
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    );
 
 // AppBar Style
 PreferredSizeWidget appBar(BuildContext context, String title) => AppBar(
